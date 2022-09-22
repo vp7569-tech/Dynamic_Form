@@ -2,6 +2,8 @@ const labelInputField = document.querySelector('#labelValue')
 const form = document.querySelector('#form')
 const inputType = document.querySelector('#inputType')
 
+//labelInputField.addEventListener('keyup',()
+
 labelInputField.addEventListener('keyup', (event) => {
     const keyPressed = event.key
 
@@ -33,16 +35,19 @@ labelInputField.addEventListener('keyup', (event) => {
 
         if (type == 'submit') {
             input.classList.add("btn")
+            //onclick="submitData"
             input.classList.add("btn-success")
             input.value = label
         }
-
         div.appendChild(input)
 
         form.appendChild(div)
 
         console.log(type, label);
 
-       
+        
+    
     }
+
+    addEventListener
 })

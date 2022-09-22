@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
     <title>Dynamic Form Trial</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-
 <body>
     <br>
    
@@ -17,16 +17,18 @@
        
        <center><h1>Dynamic Form Trial</h1></center> 
         <hr>
+        
 
         <div class="row">
             <div class="col">
                 <select class="form-control" name="inputType" id="inputType">
-                    <option value="text">Text</option>
-                    <option value="number">Number</option>
-                    <option value="textarea">Text Area</option>
-                    <option value="date">Date</option>
-                    <option value="submit">Submit</option>
+                    <option value="text" id="text">Text</option>
+                    <option value="number" id="number">Number</option>
+                    <option value="textarea" id="textarea">Text Area</option>
+                    <option value="date" id="date">Date</option>
+                    <option value="submit" id="submit" class="submit" >Submit</option>
                 </select>
+
             </div>
 
             <div class="col">
@@ -42,7 +44,35 @@
 </body>
 
 
+<script>
+    var classname = document.getElementsByClassName("submit");
 
+    
+//submit.addEventListener('click', submitData());
+function submitData(){
+    document.write("hdcvdhjcd");
+    var text=$('text').val();
+    var number=$('number').val();
+    var textarea=$('textarea').val();
+    var date =$('date').val();
+
+    jsonObject={
+        "Text":"",
+        "Number":"",
+        "Textarea":"",
+        "Date":""
+    }
+    jsonObject.Text=text;
+    jsonObject.Number=number;
+    jsonObject.Textarea=textarea;
+    jsonObject.Date=date;
+
+    var str=JSON.stringify(jsonObject);
+    document.write(str);
+    classname.addEventListener('click', submitData());
+}
+
+</script>
 
 <script src="index.js"></script>
 
